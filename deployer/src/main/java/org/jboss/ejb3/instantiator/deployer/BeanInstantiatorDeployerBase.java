@@ -130,7 +130,7 @@ public abstract class BeanInstantiatorDeployerBase extends AbstractDeployer
          {
             throw new DeploymentException("Could not install bean instantiator", e);
          }
-         log.info("Installed " + instantiator + " into MC at " + mcBindName);
+         log.debug("Installed " + instantiator + " into MC at " + mcBindName);
       }
    }
 
@@ -155,7 +155,7 @@ public abstract class BeanInstantiatorDeployerBase extends AbstractDeployer
          final JBossEnterpriseBeanMetaData ejb = it.next();
          final String mcBindName = this.getRegistrationNameFromDeploymentUnit(unit, ejb);
          ControllerContext context = kernel.getController().uninstall(mcBindName);
-         log.info("Uninstalled " + context.getTarget() + " from MC at " + mcBindName);
+         log.debug("Uninstalled " + context.getTarget() + " from MC at " + mcBindName);
       }
    }
 
